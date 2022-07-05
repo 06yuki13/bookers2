@@ -22,26 +22,30 @@
 
       <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to "Home" ,"#" %>
-        <%= link_to do %>
+        <%= link_to new_user_session_path do %>
+         <i class="fas fa-home"></i>
+        Home
         <% end %>
        </li>
 
-      <li class="nav-item">
-        <%= link_to "Books" ,"#" %>
-        <%= link_to do %>
+        <li class="nav-item">
+        <%= link_to users_path do %>
+        <i class="fas fa-users"></i>
+        Users
         <% end %>
       </li>
 
       <li class="nav-item">
-        <%= link_to "Users" ,"#" %>
-        <%= link_to do %>
+        <%= link_to books_path do %>
+        <i class="fas fa-book-open"></i>
+        Books
         <% end %>
       </li>
 
       <li class="nav-item">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        <%= link_to do %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+        Log out
         <% end %>
      </li>
 
@@ -80,7 +84,9 @@
   </nav>
 </header>
 
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
 
     <footer>
       <div class="container mt-5">
